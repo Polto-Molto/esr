@@ -1,0 +1,18 @@
+#!/bin/bash
+echo "Usage: pkgconfig-repath [folder] [src_prefix] [dist_prefix]"
+for files in "$1/*"
+do
+	for filename in $files
+		do
+			while read line           
+			do    
+				if [ "$line" = $2 ]
+				then
+					sed -i "s_$2_$3_g" ./$filename
+					echo "$filename : Prefix Path changed..."
+					break
+				fi
+			done < $filename 
+		done
+done
+
