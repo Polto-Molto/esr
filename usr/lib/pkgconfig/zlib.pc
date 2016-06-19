@@ -10,4 +10,5 @@ Version: 1.2.8
 
 Requires:
 Libs: -L${libdir} -L${sharedlibdir} -lz
+ZLIBS_LIBS: -L${libdir} -L${sharedlibdir} -lz
 Cflags: -I${includedir}
